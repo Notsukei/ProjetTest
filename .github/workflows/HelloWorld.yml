@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Hello World
-        run: echo Hello World ! \n echo $variable
+        run: echo Hello World !  $variable $nombre
         
