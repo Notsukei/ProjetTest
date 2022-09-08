@@ -17,7 +17,7 @@ on: [push, pull_request]
 
 env:
   mpush: C'est un push !
-  mpull: C'est une pull request!
+#  mpull: C'est une pull request!
 
 jobs:
   push_ci:
