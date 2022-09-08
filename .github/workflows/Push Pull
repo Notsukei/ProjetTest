@@ -1,13 +1,22 @@
 name: Push and Pull Request
 on: [push, pull_request]
+
 env:
-  variable: var1
+  mpush: "C'est un push !"
+  mpull: "C'est une pull request !"
+  
 jobs:
-  build:
+  push_ci:
     runs-on: ubuntu-latest
-    env:
-      nombre : 15
     steps:
       - uses: actions/checkout@v3
-      - name: Hello World
-        run: echo Hello World !  $variable $nombre
+      - name: Push Request
+        run: $mpush
+
+  pull_request_ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run PR CI
+        run: $mpull
