@@ -1,0 +1,13 @@
+name: Push and Pull Request
+on: [push, pull_request]
+env:
+  variable: var1
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      nombre : 15
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello World
+        run: echo Hello World !  $variable $nombre
